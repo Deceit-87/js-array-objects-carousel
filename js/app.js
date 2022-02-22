@@ -1,5 +1,24 @@
 
 
+
+
+// Descrizione:
+// Recuperate l’esercizio js carousel multi-array e copiatevi
+//  i file nella nuova repo 
+// A questo punto fate il refactoring nel seguente modo: 
+// trasformate i 3 array con i dati, in un un unico array di oggetti
+// ogni oggetto corrisponderà ad una slide e conterrà 3 proprietà: l’immagine, il titolo e la descrizione
+// generate l ’html delle slide ciclando questo array e recuperando le informazioni necessarie della proprietà
+//  dei singoli oggetti.
+// BONUS:
+// sostituisce il ciclo for utilizzando al suo posto il forEach
+// usate la destrutturazione per recuperare le proprietà degli oggetti slide
+// SUPERBONUS:
+// negli oggetti che rappresentano le slide aggiungete una quarta proprietà ‘active’ con valore booleano, 
+// ,per gestire sia la slide iniziale visibile sia il cambio slide. (ricordatevi che potrà essere sempre 
+// e solo una slide attiva alla volta)
+// Buon lavoro
+
 const SLIDES =[
     {
         imgUrl: 'img/01.jpg' , 
@@ -10,7 +29,7 @@ const SLIDES =[
     },
     {
         imgUrl: 'img/02.jpg' , 
-        titleImg:'SvizzerA',
+        titleImg:'Svizzera',
         descriptionImg:'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
 
 
@@ -35,15 +54,51 @@ const SLIDES =[
         descriptionImg:'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
 
 
-    },
+    }
 ]
 
 
-SLIDES.forEach((el, i ,array) => {
-console.log(el,i,array)
-});
 
 
+
+
+const containerSlides = document.querySelector('.container');
+
+
+console.log(containerSlides)
+
+SLIDES.forEach( ({imgUrl,titleImg,descriptionImg})  => {
+
+    // const item = 
+    // `
+    // <div class="item">
+    // <img src="${imgUrl}" alt="">
+    // <div class="description">
+    // <h3 class="titolo">${titleImg}</h3>
+    // <p class="paragrafo">${descriptionImg}</p>
+    // </div>
+    // </div>
+    // ` 
+    // console.log(imgUrl,titleImg,descriptionImg)
+
+    // containerSlides.innerHTML += item
+
+    const divElement = document.createElement('div') ;
+    const imgElement = document.createElement('img') ;
+    const divTitle   = document.createElement('h2') ;
+   
+    imgElement.src = imgUrl;
+    containerSlides.append(divElement);
+    divElement.append(imgElement); 
+    divElement.append(divTitle);
+    divTitle.append (titleImg);
+    divElement.append(descriptionImg);
+    console.log(divTitle)
+
+
+ });
+
+ 
 
 
 

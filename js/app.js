@@ -86,13 +86,18 @@ SLIDES.forEach( ({imgUrl,titleImg,descriptionImg})  => {
     const divElement = document.createElement('div') ;
     const imgElement = document.createElement('img') ;
     const divTitle   = document.createElement('h2') ;
-   
+    const divDescription = document.createElement('p') 
     imgElement.src = imgUrl;
     containerSlides.append(divElement);
+    divElement.classList.add("slider")
     divElement.append(imgElement); 
+    imgElement.classList.add("slider-img")
     divElement.append(divTitle);
+    divTitle.classList.add("title-img")
     divTitle.append (titleImg);
-    divElement.append(descriptionImg);
+    divElement.append(divDescription);
+    divDescription.classList.add("info-img")
+    divDescription.append(descriptionImg)
     console.log(divTitle)
 
 

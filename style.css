@@ -9,6 +9,10 @@
 .active{
 visibility: visible;
 }
+.slider-container{
+    width: 500px;
+    height: 300px;
+}
 .slider{
     width: 500px;
     height: 300px;

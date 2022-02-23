@@ -62,7 +62,7 @@ const SLIDES =[
 
 
 
-const containerSlides = document.querySelector('.container');
+const containerSlides = document.querySelector('.slider-container');
 
 
 console.log(containerSlides)
